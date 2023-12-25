@@ -1,0 +1,35 @@
+# Project: student
+# Makefile created by Dev-C++ 6.7.5
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o stu_file.o stu_service.o
+LINKOBJ  = main.o stu_file.o stu_service.o
+LIBS     = -L"d:/download/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/" -L"d:/download/dev-cpp/mingw32/lib/gcc/" -L"d:/download/dev-cpp/mingw32/mingw32/lib/" -L"d:/download/dev-cpp/mingw32/lib/" -L"D:/download/Dev-Cpp/MinGW32/lib" -L"D:/download/Dev-Cpp/MinGW32/mingw32/lib" -g3 -static
+INCS     = -I"d:/download/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include" -I"d:/download/dev-cpp/mingw32/include" -I"d:/download/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include-fixed"
+CXXINCS  = -I"d:/download/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include/c++" -I"d:/download/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include/c++/mingw32" -I"d:/download/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include/c++/backward" -I"d:/download/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include" -I"d:/download/dev-cpp/mingw32/include" -I"d:/download/dev-cpp/mingw32/lib/gcc/mingw32/9.2.0/include-fixed"
+BIN      = student.exe
+CXXFLAGS = $(CXXINCS) -Wall -Wextra -g3
+ENCODINGS = -finput-charset=utf-8 -fexec-charset=gbk
+CFLAGS   = $(INCS) -Wall -Wextra -g3
+RM       = del /q /f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "$(BIN)" $(LIBS)
+
+main.o: main.c global.h model.h stu_file.h stu_service.h
+	$(CC) -c main.c -o main.o $(CFLAGS) 
+
+stu_file.o: stu_file.c global.h model.h stu_file.h stu_service.h
+	$(CC) -c stu_file.c -o stu_file.o $(CFLAGS) 
+
+stu_service.o: stu_service.c global.h model.h stu_file.h stu_service.h
+	$(CC) -c stu_service.c -o stu_service.o $(CFLAGS) 

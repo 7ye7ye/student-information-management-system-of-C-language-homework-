@@ -1,0 +1,5 @@
+Student Information:
+ID: 1, Name: hong, Gender: M, Age: 19, C Score: 3, Math Score: 4, English Score: 5
+ID: 4, Name: jund, Gender: M, Age: 56, C Score: 4, Math Score: 5, English Score: 6
+ID: 9, Name: hongj, Gender: M, Age: 44, C Score: 3, Math Score: 5, English Score: 7
+ID: 21, Name: li, Gender: F, Age: 22, C Score: 5, Math Score: 6, English Score: 7
